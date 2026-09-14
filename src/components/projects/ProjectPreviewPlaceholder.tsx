@@ -33,6 +33,7 @@ export const ProjectPreviewPlaceholder: React.FC<
       className={`
         relative
         w-full
+        min-w-0
         flex
         flex-col
         overflow-hidden
@@ -42,6 +43,12 @@ export const ProjectPreviewPlaceholder: React.FC<
         border-[#0f172a]
         shadow-[6px_6px_0px_#0f172a]
         group/preview
+
+        /* Responsive height protection */
+        min-h-[280px]
+        sm:min-h-[350px]
+        lg:min-h-[440px]
+
         ${className}
       `}
     >
@@ -51,27 +58,42 @@ export const ProjectPreviewPlaceholder: React.FC<
 
       <div
         className="
+          relative
+          z-20
+          w-full
+          min-w-0
+          shrink-0
           flex
           items-center
           justify-between
-          px-4
-          py-2
+          gap-2
+          px-3
+          py-2.5
+          sm:px-4
+          sm:py-2
           bg-[#faeed1]
           border-b-2
           border-[#0f172a]
-          shrink-0
         "
       >
-        <div className="
-          flex
-          items-center
-          gap-2
-          min-w-0
-        ">
+        <div
+          className="
+            flex
+            items-center
+            gap-1.5
+            sm:gap-2
+            min-w-0
+            flex-1
+            overflow-hidden
+          "
+        >
           <span
             className="
-              w-3
-              h-3
+              w-2.5
+              h-2.5
+              sm:w-3
+              sm:h-3
+              shrink-0
               rounded-full
               bg-[#f87171]
               border
@@ -81,8 +103,11 @@ export const ProjectPreviewPlaceholder: React.FC<
 
           <span
             className="
-              w-3
-              h-3
+              w-2.5
+              h-2.5
+              sm:w-3
+              sm:h-3
+              shrink-0
               rounded-full
               bg-[#fde047]
               border
@@ -92,8 +117,11 @@ export const ProjectPreviewPlaceholder: React.FC<
 
           <span
             className="
-              w-3
-              h-3
+              w-2.5
+              h-2.5
+              sm:w-3
+              sm:h-3
+              shrink-0
               rounded-full
               bg-[#4ade80]
               border
@@ -103,20 +131,25 @@ export const ProjectPreviewPlaceholder: React.FC<
 
           <div
             className="
-              ml-2
-              px-3
+              ml-1
+              sm:ml-2
+              min-w-0
+              max-w-[110px]
+              sm:max-w-[240px]
+              px-2
+              sm:px-3
               py-0.5
               rounded-md
               bg-[#fffdf5]
               border
               border-[#0f172a]/50
-              text-[11px]
+              text-[9px]
+              sm:text-[11px]
               font-mono
               font-bold
               text-[#0f172a]
               truncate
-              max-w-[130px]
-              sm:max-w-[240px]
+              overflow-hidden
             "
           >
             {isMobile
@@ -125,35 +158,67 @@ export const ProjectPreviewPlaceholder: React.FC<
           </div>
         </div>
 
+        {/* ==================================
+            APPLICATION TYPE
+        =================================== */}
+
         <div
           className="
+            relative
+            z-30
+            shrink-0
+            min-w-0
+            max-w-[145px]
+            sm:max-w-none
             flex
             items-center
-            gap-1.5
-            text-[10px]
+            justify-center
+            gap-1
+            sm:gap-1.5
+            text-[8px]
+            sm:text-[10px]
             font-mono
             font-black
-            px-2.5
-            py-0.5
+            px-1.5
+            sm:px-2.5
+            py-1
+            sm:py-0.5
             rounded-md
             bg-[#fde047]
             text-[#0f172a]
             border
             border-[#0f172a]
-            shrink-0
+            whitespace-nowrap
+            overflow-hidden
           "
         >
           {isMobile ? (
             <Smartphone
-              className="w-3 h-3"
+              className="
+                w-3
+                h-3
+                shrink-0
+              "
             />
           ) : (
             <Globe
-              className="w-3 h-3"
+              className="
+                w-3
+                h-3
+                shrink-0
+              "
             />
           )}
 
-          <span>
+          <span
+            className="
+              block
+              min-w-0
+              overflow-hidden
+              text-ellipsis
+              whitespace-nowrap
+            "
+          >
             {isMobile
               ? 'MOBILE APP'
               : 'WEB APPLICATION'}
@@ -168,9 +233,12 @@ export const ProjectPreviewPlaceholder: React.FC<
       <div
         className="
           relative
+          z-10
           w-full
+          min-w-0
           flex-1
-          min-h-0
+          min-h-[220px]
+          sm:min-h-0
           bg-[#f8fafc]
           flex
           items-center
@@ -189,8 +257,11 @@ export const ProjectPreviewPlaceholder: React.FC<
               setImageError(true)
             }
             className={`
+              block
               w-full
               h-full
+              min-w-0
+              min-h-0
               ${
                 project.imageFit ===
                   'contain' ||
@@ -206,6 +277,8 @@ export const ProjectPreviewPlaceholder: React.FC<
         ) : (
           <div
             className="
+              w-full
+              min-w-0
               flex
               flex-col
               items-center
@@ -213,6 +286,7 @@ export const ProjectPreviewPlaceholder: React.FC<
               p-6
               text-center
               space-y-3
+              overflow-hidden
             "
           >
             <div
@@ -226,6 +300,7 @@ export const ProjectPreviewPlaceholder: React.FC<
                 shadow-[3px_3px_0px_#0f172a]
                 group-hover/preview:scale-110
                 transition-transform
+                shrink-0
               "
             >
               <ImageIcon
@@ -233,13 +308,21 @@ export const ProjectPreviewPlaceholder: React.FC<
               />
             </div>
 
-            <div>
+            <div
+              className="
+                min-w-0
+                max-w-full
+                overflow-hidden
+              "
+            >
               <div
                 className="
                   text-base
                   font-black
                   text-[#0f172a]
                   tracking-tight
+                  break-words
+                  [overflow-wrap:anywhere]
                 "
               >
                 {project.title}
@@ -252,6 +335,8 @@ export const ProjectPreviewPlaceholder: React.FC<
                   font-bold
                   text-[#0284c7]
                   mt-0.5
+                  break-words
+                  [overflow-wrap:anywhere]
                 "
               >
                 Preview Screenshot Proyek
@@ -260,6 +345,8 @@ export const ProjectPreviewPlaceholder: React.FC<
 
             <div
               className="
+                max-w-full
+                min-w-0
                 text-[11px]
                 font-mono
                 text-[#64748b]
@@ -269,6 +356,8 @@ export const ProjectPreviewPlaceholder: React.FC<
                 rounded-lg
                 border
                 border-[#0f172a]/30
+                break-words
+                [overflow-wrap:anywhere]
               "
             >
               {project.stack
