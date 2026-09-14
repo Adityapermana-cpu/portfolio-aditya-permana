@@ -48,8 +48,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
         inset-0
         w-full
         h-screen
-        overflow-visible
-        sm:overflow-hidden
+        overflow-hidden
         bg-[#14532d]
       "
       style={{
@@ -76,16 +75,15 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
           sm:px-8
           lg:px-12
           xl:px-16
-          py-16
+          py-10
           sm:py-28
-          overflow-visible
         "
       >
         <div className="w-full max-w-7xl mx-auto min-w-0">
 
-          {/* ==========================================
+          {/* ==================================
               TOP INFORMATION
-          =========================================== */}
+          =================================== */}
 
           <div
             className="
@@ -95,9 +93,8 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               justify-between
               gap-1.5
               sm:gap-3
-              mb-3
+              mb-2.5
               sm:mb-6
-              min-w-0
             "
           >
             <div
@@ -108,7 +105,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 gap-1
                 sm:gap-2
                 min-w-0
-                max-w-[75%]
+                max-w-[70%]
               "
             >
               <div
@@ -134,12 +131,12 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               >
                 <span
                   className="
-                    text-[7px]
+                    text-[6.5px]
                     sm:text-xs
                     font-mono
                     font-black
                     tracking-wide
-                    break-words
+                    leading-tight
                   "
                 >
                   0{index + 1} // {categoryLabel}
@@ -166,11 +163,11 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 >
                   <span
                     className="
-                      text-[7px]
+                      text-[6.5px]
                       sm:text-xs
                       font-mono
                       font-bold
-                      break-words
+                      leading-tight
                     "
                   >
                     {project.role}
@@ -198,7 +195,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
             >
               <span
                 className="
-                  text-[7px]
+                  text-[6.5px]
                   sm:text-xs
                   font-mono
                   font-black
@@ -211,28 +208,28 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
             </div>
           </div>
 
-          {/* ==========================================
+          {/* ==================================
               MAIN LAYOUT
-              TETAP 2 CARD BERDAMPINGAN DI HP
-          =========================================== */}
+              2 CARD TETAP BERDAMPINGAN DI HP
+          =================================== */}
 
           <div
             className="
               grid
-              grid-cols-[0.92fr_1.08fr]
-              sm:grid-cols-[0.95fr_1.05fr]
-              lg:grid-cols-[0.95fr_1.05fr]
-              gap-2
+              grid-cols-2
+              gap-1.5
               sm:gap-5
+              lg:grid-cols-[0.95fr_1.05fr]
               lg:gap-8
               items-center
+              w-full
               min-w-0
             "
           >
 
-            {/* ========================================
+            {/* ==================================
                 INFORMATION CARD
-            ========================================= */}
+            =================================== */}
 
             <motion.div
               initial={{
@@ -251,7 +248,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 relative
                 min-w-0
                 w-full
-                rounded-[18px]
+                rounded-[15px]
                 sm:rounded-[32px]
                 bg-[#fffdf5]
                 border-2
@@ -273,8 +270,8 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                   -right-2
                   sm:-top-3
                   sm:-right-3
-                  w-7
-                  h-7
+                  w-6
+                  h-6
                   sm:w-10
                   sm:h-10
                   rounded-lg
@@ -292,8 +289,8 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               >
                 <Layers
                   className="
-                    w-3.5
-                    h-3.5
+                    w-3
+                    h-3
                     sm:w-5
                     sm:h-5
                     text-[#1c1917]
@@ -305,17 +302,17 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
 
               <div
                 className="
-                  text-[7px]
+                  text-[6px]
                   sm:text-xs
                   font-mono
                   font-black
                   text-[#15803d]
                   uppercase
-                  tracking-widest
+                  tracking-wide
+                  sm:tracking-widest
                   mb-1
                   sm:mb-2
-                  break-words
-                  pr-1
+                  leading-tight
                 "
               >
                 {project.subtitle}
@@ -325,13 +322,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
 
               <h2
                 className="
-                  text-lg
+                  text-[16px]
                   sm:text-4xl
                   lg:text-5xl
                   font-black
                   text-[#1c1917]
                   tracking-tight
-                  leading-[0.98]
+                  leading-[0.95]
                   break-words
                 "
               >
@@ -342,23 +339,20 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
 
               <p
                 className="
-                  mt-2
+                  mt-1.5
                   sm:mt-4
-                  text-[8px]
+                  text-[7px]
                   sm:text-base
                   text-[#44403c]
                   font-medium
-                  leading-snug
+                  leading-[1.25]
                   sm:leading-relaxed
-                  break-words
                 "
               >
                 {project.summary}
               </p>
 
-              {/* ======================================
-                  METRICS
-              ======================================= */}
+              {/* metrics */}
 
               {project.metrics?.length > 0 && (
                 <div
@@ -368,7 +362,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                     sm:grid-cols-3
                     gap-1
                     sm:gap-2.5
-                    mt-3
+                    mt-2
                     sm:mt-5
                   "
                 >
@@ -378,23 +372,23 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                       <div
                         key={`${metric.label}-${metric.value}`}
                         className="
-                          rounded-lg
+                          rounded-md
                           sm:rounded-xl
                           bg-[#f0fdf4]
                           border-2
                           border-[#1c1917]
-                          p-1.5
+                          p-1
                           sm:p-2.5
                           min-w-0
                         "
                       >
                         <div
                           className="
-                            text-[9px]
+                            text-[8px]
                             sm:text-base
                             font-black
                             text-[#15803d]
-                            break-words
+                            leading-tight
                           "
                         >
                           {metric.value}
@@ -403,14 +397,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                         <div
                           className="
                             mt-0.5
-                            text-[6px]
+                            text-[5px]
                             sm:text-[10px]
                             font-mono
                             font-bold
                             text-[#57534e]
                             uppercase
                             leading-tight
-                            break-words
                           "
                         >
                           {metric.label}
@@ -420,20 +413,17 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 </div>
               )}
 
-              {/* ======================================
-                  STACK
-              ======================================= */}
+              {/* stack */}
 
               {project.stack?.length > 0 && (
                 <div
                   className="
                     flex
                     flex-wrap
-                    gap-1
+                    gap-0.5
                     sm:gap-1.5
-                    mt-3
+                    mt-2
                     sm:mt-5
-                    min-w-0
                   "
                 >
                   {project.stack
@@ -442,22 +432,21 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                       <span
                         key={item}
                         className="
-                          px-1.5
+                          px-1
                           sm:px-2.5
                           py-0.5
                           sm:py-1
-                          rounded-md
+                          rounded
                           sm:rounded-lg
                           bg-[#f5f5f4]
                           border
                           border-[#1c1917]/30
-                          text-[6px]
+                          text-[5px]
                           sm:text-[11px]
                           font-mono
                           font-bold
                           text-[#292524]
-                          break-words
-                          max-w-full
+                          leading-tight
                         "
                       >
                         {item}
@@ -466,9 +455,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 </div>
               )}
 
-              {/* ======================================
-                  ACTIONS
-              ======================================= */}
+              {/* actions */}
 
               <div
                 className="
@@ -476,9 +463,8 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                   flex-wrap
                   gap-1
                   sm:gap-2.5
-                  mt-3
+                  mt-2.5
                   sm:mt-6
-                  min-w-0
                 "
               >
 
@@ -492,13 +478,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                   className="
                     inline-flex
                     items-center
-                    gap-1
+                    gap-0.5
                     sm:gap-2
                     px-1.5
                     sm:px-4
-                    py-1.5
+                    py-1
                     sm:py-2.5
-                    rounded-lg
+                    rounded-md
                     sm:rounded-xl
                     bg-[#1c1917]
                     text-white
@@ -511,12 +497,11 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                     transition-all
                     duration-200
                     cursor-pointer
-                    min-w-0
                   "
                 >
                   <span
                     className="
-                      text-[7px]
+                      text-[6px]
                       sm:text-sm
                       font-black
                       whitespace-nowrap
@@ -527,11 +512,10 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
 
                   <ArrowUpRight
                     className="
-                      w-3
-                      h-3
+                      w-2.5
+                      h-2.5
                       sm:w-4
                       sm:h-4
-                      shrink-0
                     "
                   />
                 </button>
@@ -543,13 +527,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                     className="
                       inline-flex
                       items-center
-                      gap-1
+                      gap-0.5
                       sm:gap-2
                       px-1.5
                       sm:px-4
-                      py-1.5
+                      py-1
                       sm:py-2.5
-                      rounded-lg
+                      rounded-md
                       sm:rounded-xl
                       bg-[#e0f2fe]
                       text-[#075985]
@@ -557,22 +541,20 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                       border-[#1c1917]
                       shadow-[2px_2px_0px_#1c1917]
                       sm:shadow-[3px_3px_0px_#1c1917]
-                      min-w-0
                     "
                   >
                     <Smartphone
                       className="
-                        w-3
-                        h-3
+                        w-2.5
+                        h-2.5
                         sm:w-4
                         sm:h-4
-                        shrink-0
                       "
                     />
 
                     <span
                       className="
-                        text-[7px]
+                        text-[6px]
                         sm:text-sm
                         font-black
                         whitespace-nowrap
@@ -593,13 +575,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                     className="
                       inline-flex
                       items-center
-                      gap-1
+                      gap-0.5
                       sm:gap-2
                       px-1.5
                       sm:px-4
-                      py-1.5
+                      py-1
                       sm:py-2.5
-                      rounded-lg
+                      rounded-md
                       sm:rounded-xl
                       bg-[#dcfce7]
                       text-[#166534]
@@ -610,22 +592,20 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                       hover:-translate-y-0.5
                       transition-all
                       duration-200
-                      min-w-0
                     "
                   >
                     <ExternalLink
                       className="
-                        w-3
-                        h-3
+                        w-2.5
+                        h-2.5
                         sm:w-4
                         sm:h-4
-                        shrink-0
                       "
                     />
 
                     <span
                       className="
-                        text-[7px]
+                        text-[6px]
                         sm:text-sm
                         font-black
                         whitespace-nowrap
@@ -636,41 +616,39 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                   </a>
                 )}
 
-                {/* Private Repository / GitHub */}
+                {/* Private Repo */}
 
                 {project.isPrivateRepo ? (
                   <span
                     className="
                       inline-flex
                       items-center
-                      gap-1
+                      gap-0.5
                       sm:gap-2
                       px-1.5
                       sm:px-4
-                      py-1.5
+                      py-1
                       sm:py-2.5
-                      rounded-lg
+                      rounded-md
                       sm:rounded-xl
                       bg-[#f5f5f4]
                       text-[#44403c]
                       border-2
                       border-[#1c1917]/50
-                      min-w-0
                     "
                   >
                     <Lock
                       className="
-                        w-3
-                        h-3
+                        w-2.5
+                        h-2.5
                         sm:w-4
                         sm:h-4
-                        shrink-0
                       "
                     />
 
                     <span
                       className="
-                        text-[7px]
+                        text-[6px]
                         sm:text-sm
                         font-black
                         whitespace-nowrap
@@ -687,13 +665,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                     className="
                       inline-flex
                       items-center
-                      gap-1
+                      gap-0.5
                       sm:gap-2
                       px-1.5
                       sm:px-4
-                      py-1.5
+                      py-1
                       sm:py-2.5
-                      rounded-lg
+                      rounded-md
                       sm:rounded-xl
                       bg-[#fffdf5]
                       text-[#1c1917]
@@ -704,22 +682,20 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                       hover:-translate-y-0.5
                       transition-all
                       duration-200
-                      min-w-0
                     "
                   >
                     <ExternalLink
                       className="
-                        w-3
-                        h-3
+                        w-2.5
+                        h-2.5
                         sm:w-4
                         sm:h-4
-                        shrink-0
                       "
                     />
 
                     <span
                       className="
-                        text-[7px]
+                        text-[6px]
                         sm:text-sm
                         font-black
                         whitespace-nowrap
@@ -732,9 +708,9 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               </div>
             </motion.div>
 
-            {/* ========================================
-                PROJECT PREVIEW
-            ========================================= */}
+            {/* ==================================
+                PROJECT PREVIEW CARD
+            =================================== */}
 
             <motion.div
               initial={{
@@ -755,7 +731,7 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 relative
                 min-w-0
                 w-full
-                min-h-[180px]
+                min-h-[165px]
                 sm:min-h-[340px]
                 lg:min-h-[430px]
                 flex
@@ -765,15 +741,13 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               <ProjectPreviewPlaceholder
                 project={project}
                 className="
-                  h-[180px]
+                  h-[165px]
                   sm:h-[350px]
                   lg:h-[440px]
-                  min-w-0
                   w-full
+                  min-w-0
                 "
-                isMobileFrame={
-                  project.isMobileApp
-                }
+                isMobileFrame={project.isMobileApp}
               />
 
               {/* Architecture button */}
@@ -785,15 +759,15 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 }
                 className="
                   absolute
-                  -bottom-2
+                  -bottom-1.5
                   left-1
                   sm:-bottom-3
                   sm:left-8
-                  px-1.5
+                  px-1
                   sm:px-3.5
-                  py-1.5
+                  py-1
                   sm:py-2
-                  rounded-lg
+                  rounded-md
                   sm:rounded-xl
                   bg-[#fde047]
                   text-[#1c1917]
@@ -806,12 +780,11 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                   duration-200
                   cursor-pointer
                   max-w-[95%]
-                  min-w-0
                 "
               >
                 <span
                   className="
-                    text-[6px]
+                    text-[5.5px]
                     sm:text-xs
                     font-mono
                     font-black
