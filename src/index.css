@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #1b4332;
+    --bg-secondary: #2d6a4f;
+    --card-surface: #40916c;
+    --card-hover: #52b788;
+    --card-border: #74c69d;
+    --text-primary: #1c1917;
+    --text-secondary: #44403c;
+    --text-farm: #78350f;
+    --accent-green: #2d6a4f;
+    --accent-green-hover: #1b4332;
+    --accent-wheat: #eab308;
+    --accent-barn: #dc2626;
+    --accent-soil: #8b5a2b;
+    --accent-soil-hover: #5c3a21;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  code,
+  pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fefae0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b5a2b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d6a4f;
+}
+
+/* hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+@keyframes wheatSwayRoll {
+  0% {
+    background-position: 0px 0px, 0% 50%;
+  }
+
+  100% {
+    background-position: 120px 0px, 0% 50%;
+  }
+}
+
+@keyframes wheatSwayRise {
+  0% {
+    background-position: 0px 35px, 0% 0%;
+  }
+
+  28% {
+    background-position: 25px 0px, 0% 50%;
+  }
+
+  100% {
+    background-position: 145px 0px, 0% 50%;
+  }
+}
+
+.wave-text-half {
+  position: relative;
+  display: inline-block;
+  color: #fefae0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40' preserveAspectRatio='none'%3E%3Cpath d='M0,20 C30,12 60,26 90,18 C105,14 115,22 120,18 L120,40 L0,40 Z' fill='%23a7f3d0'/%3E%3Cpath d='M0,22 C30,16 60,28 90,22 C105,18 115,24 120,22 L120,40 L0,40 Z' fill='%2322c55e'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #ffffff 0%, #ffffff 49%, #22c55e 50%, #15803d 100%);
+  background-size: 120px 100%, 100% 200%;
+  background-position: 0px 35px, 0% 0%;
+  background-repeat: repeat-x, no-repeat;
+  transition: font-weight 0.2s ease;
+}
+
+.wave-text-half:hover {
+  animation: wheatSwayRise 2.4s ease-out infinite;
+}
+
+.wave-text-half.is-active {
+  background-position: 0px 0px, 0% 50%;
+  animation: wheatSwayRoll 2s linear infinite;
+  font-weight: 700;
+}
+/* Global responsive safety */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: anywhere;
+  }
+
+  p,
+  span,
+  a,
+  button {
+    overflow-wrap: break-word;
+  }
+}
