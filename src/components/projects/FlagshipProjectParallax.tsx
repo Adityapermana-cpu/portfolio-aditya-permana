@@ -44,19 +44,12 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
   return (
     <motion.div
       className="
-        relative
-        sm:absolute
-        sm:inset-0
-
+        absolute
+        inset-0
         w-full
-        min-w-0
-
-        min-h-screen
-        sm:h-screen
-
+        h-screen
         overflow-visible
         sm:overflow-hidden
-
         bg-[#14532d]
       "
       style={{
@@ -76,68 +69,180 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
           relative
           z-10
           w-full
-          min-w-0
-
-          min-h-screen
-          sm:h-full
-
+          h-full
           flex
-          items-start
-          sm:items-center
-
-          px-3
+          items-center
+          px-2
           sm:px-8
           lg:px-12
           xl:px-16
-
-          pt-24
-          pb-16
+          py-16
           sm:py-28
+          overflow-visible
         "
       >
         <div className="w-full max-w-7xl mx-auto min-w-0">
-          {/* top information */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-5 sm:mb-6">
-            <div className="flex flex-wrap items-center gap-2 min-w-0">
-              <div className="inline-flex max-w-full items-center gap-2 px-3 py-1.5 rounded-xl bg-[#fde047] text-[#1c1917] border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917]">
-                <span className="text-[10px] sm:text-xs font-mono font-black tracking-wide break-words">
+
+          {/* ==========================================
+              TOP INFORMATION
+          =========================================== */}
+
+          <div
+            className="
+              flex
+              flex-wrap
+              items-center
+              justify-between
+              gap-1.5
+              sm:gap-3
+              mb-3
+              sm:mb-6
+              min-w-0
+            "
+          >
+            <div
+              className="
+                flex
+                flex-wrap
+                items-center
+                gap-1
+                sm:gap-2
+                min-w-0
+                max-w-[75%]
+              "
+            >
+              <div
+                className="
+                  inline-flex
+                  items-center
+                  gap-1
+                  sm:gap-2
+                  px-1.5
+                  sm:px-3
+                  py-1
+                  sm:py-1.5
+                  rounded-lg
+                  sm:rounded-xl
+                  bg-[#fde047]
+                  text-[#1c1917]
+                  border-2
+                  border-[#1c1917]
+                  shadow-[2px_2px_0px_#1c1917]
+                  sm:shadow-[3px_3px_0px_#1c1917]
+                  min-w-0
+                "
+              >
+                <span
+                  className="
+                    text-[7px]
+                    sm:text-xs
+                    font-mono
+                    font-black
+                    tracking-wide
+                    break-words
+                  "
+                >
                   0{index + 1} // {categoryLabel}
                 </span>
               </div>
 
               {project.role && (
-                <div className="max-w-full px-3 py-1.5 rounded-xl bg-[#fffdf5] text-[#1c1917] border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917]">
-                  <span className="text-[10px] sm:text-xs font-mono font-bold break-words">
+                <div
+                  className="
+                    px-1.5
+                    sm:px-3
+                    py-1
+                    sm:py-1.5
+                    rounded-lg
+                    sm:rounded-xl
+                    bg-[#fffdf5]
+                    text-[#1c1917]
+                    border-2
+                    border-[#1c1917]
+                    shadow-[2px_2px_0px_#1c1917]
+                    sm:shadow-[3px_3px_0px_#1c1917]
+                    min-w-0
+                  "
+                >
+                  <span
+                    className="
+                      text-[7px]
+                      sm:text-xs
+                      font-mono
+                      font-bold
+                      break-words
+                    "
+                  >
                     {project.role}
                   </span>
                 </div>
               )}
             </div>
 
-            <div className="max-w-full px-3 py-1.5 rounded-xl bg-[#15803d] text-white border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917]">
-              <span className="text-[10px] sm:text-xs font-mono font-black tracking-wide break-words">
+            <div
+              className="
+                px-1.5
+                sm:px-3
+                py-1
+                sm:py-1.5
+                rounded-lg
+                sm:rounded-xl
+                bg-[#15803d]
+                text-white
+                border-2
+                border-[#1c1917]
+                shadow-[2px_2px_0px_#1c1917]
+                sm:shadow-[3px_3px_0px_#1c1917]
+                shrink-0
+              "
+            >
+              <span
+                className="
+                  text-[7px]
+                  sm:text-xs
+                  font-mono
+                  font-black
+                  tracking-wide
+                  whitespace-nowrap
+                "
+              >
                 PROJECT UNGGULAN {index + 1} / 4
               </span>
             </div>
           </div>
 
-          {/* main layout */}
+          {/* ==========================================
+              MAIN LAYOUT
+              TETAP 2 CARD BERDAMPINGAN DI HP
+          =========================================== */}
+
           <div
             className="
               grid
-              grid-cols-1
+              grid-cols-[0.92fr_1.08fr]
+              sm:grid-cols-[0.95fr_1.05fr]
               lg:grid-cols-[0.95fr_1.05fr]
-              gap-5
+              gap-2
+              sm:gap-5
               lg:gap-8
-              items-start
-              lg:items-center
+              items-center
               min-w-0
             "
           >
-            {/* information card */}
+
+            {/* ========================================
+                INFORMATION CARD
+            ========================================= */}
+
             <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{
+                opacity: 0,
+                x: -24
+              }}
+              animate={{
+                opacity: 1,
+                x: 0
+              }}
               transition={{
                 duration: 0.6,
                 delay: 0.1
@@ -146,137 +251,431 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 relative
                 min-w-0
                 w-full
-
-                rounded-[26px]
+                rounded-[18px]
                 sm:rounded-[32px]
-
                 bg-[#fffdf5]
                 border-2
                 border-[#1c1917]
-                shadow-[6px_6px_0px_#1c1917]
-
-                p-5
+                shadow-[3px_3px_0px_#1c1917]
+                sm:shadow-[6px_6px_0px_#1c1917]
+                p-2
                 sm:p-7
                 lg:p-8
               "
             >
-              <div className="absolute -top-3 -right-3 w-10 h-10 rounded-xl bg-[#fde047] border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917] flex items-center justify-center z-20">
-                <Layers className="w-5 h-5 text-[#1c1917]" />
+
+              {/* decoration */}
+
+              <div
+                className="
+                  absolute
+                  -top-2
+                  -right-2
+                  sm:-top-3
+                  sm:-right-3
+                  w-7
+                  h-7
+                  sm:w-10
+                  sm:h-10
+                  rounded-lg
+                  sm:rounded-xl
+                  bg-[#fde047]
+                  border-2
+                  border-[#1c1917]
+                  shadow-[2px_2px_0px_#1c1917]
+                  sm:shadow-[3px_3px_0px_#1c1917]
+                  flex
+                  items-center
+                  justify-center
+                  z-20
+                "
+              >
+                <Layers
+                  className="
+                    w-3.5
+                    h-3.5
+                    sm:w-5
+                    sm:h-5
+                    text-[#1c1917]
+                  "
+                />
               </div>
 
-              <div className="text-[10px] sm:text-xs font-mono font-black text-[#15803d] uppercase tracking-widest mb-2 break-words [overflow-wrap:anywhere]">
+              {/* subtitle */}
+
+              <div
+                className="
+                  text-[7px]
+                  sm:text-xs
+                  font-mono
+                  font-black
+                  text-[#15803d]
+                  uppercase
+                  tracking-widest
+                  mb-1
+                  sm:mb-2
+                  break-words
+                  pr-1
+                "
+              >
                 {project.subtitle}
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1917] tracking-tight leading-[0.98] break-words [overflow-wrap:anywhere]">
+              {/* title */}
+
+              <h2
+                className="
+                  text-lg
+                  sm:text-4xl
+                  lg:text-5xl
+                  font-black
+                  text-[#1c1917]
+                  tracking-tight
+                  leading-[0.98]
+                  break-words
+                "
+              >
                 {project.title}
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-[#44403c] font-medium leading-relaxed break-words [overflow-wrap:anywhere]">
+              {/* summary */}
+
+              <p
+                className="
+                  mt-2
+                  sm:mt-4
+                  text-[8px]
+                  sm:text-base
+                  text-[#44403c]
+                  font-medium
+                  leading-snug
+                  sm:leading-relaxed
+                  break-words
+                "
+              >
                 {project.summary}
               </p>
 
-              {/* metrics */}
+              {/* ======================================
+                  METRICS
+              ======================================= */}
+
               {project.metrics?.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-5">
-                  {project.metrics.slice(0, 3).map((metric) => (
-                    <div
-                      key={`${metric.label}-${metric.value}`}
-                      className="
-                        min-w-0
-                        overflow-hidden
-                        rounded-xl
-                        bg-[#f0fdf4]
-                        border-2
-                        border-[#1c1917]
-                        p-2.5
-                      "
-                    >
-                      <div className="text-sm sm:text-base font-black text-[#15803d] break-words [overflow-wrap:anywhere]">
-                        {metric.value}
-                      </div>
+                <div
+                  className="
+                    grid
+                    grid-cols-2
+                    sm:grid-cols-3
+                    gap-1
+                    sm:gap-2.5
+                    mt-3
+                    sm:mt-5
+                  "
+                >
+                  {project.metrics
+                    .slice(0, 3)
+                    .map((metric) => (
+                      <div
+                        key={`${metric.label}-${metric.value}`}
+                        className="
+                          rounded-lg
+                          sm:rounded-xl
+                          bg-[#f0fdf4]
+                          border-2
+                          border-[#1c1917]
+                          p-1.5
+                          sm:p-2.5
+                          min-w-0
+                        "
+                      >
+                        <div
+                          className="
+                            text-[9px]
+                            sm:text-base
+                            font-black
+                            text-[#15803d]
+                            break-words
+                          "
+                        >
+                          {metric.value}
+                        </div>
 
-                      <div className="mt-0.5 text-[9px] sm:text-[10px] font-mono font-bold text-[#57534e] uppercase leading-tight break-words [overflow-wrap:anywhere]">
-                        {metric.label}
+                        <div
+                          className="
+                            mt-0.5
+                            text-[6px]
+                            sm:text-[10px]
+                            font-mono
+                            font-bold
+                            text-[#57534e]
+                            uppercase
+                            leading-tight
+                            break-words
+                          "
+                        >
+                          {metric.label}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               )}
 
-              {/* stack */}
+              {/* ======================================
+                  STACK
+              ======================================= */}
+
               {project.stack?.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-5 min-w-0">
-                  {project.stack.slice(0, 8).map((item) => (
-                    <span
-                      key={item}
-                      className="
-                        max-w-full
-                        px-2.5
-                        py-1
-                        rounded-lg
-                        bg-[#f5f5f4]
-                        border
-                        border-[#1c1917]/30
-                        text-[10px]
-                        sm:text-[11px]
-                        font-mono
-                        font-bold
-                        text-[#292524]
-                        break-words
-                        [overflow-wrap:anywhere]
-                      "
-                    >
-                      {item}
-                    </span>
-                  ))}
+                <div
+                  className="
+                    flex
+                    flex-wrap
+                    gap-1
+                    sm:gap-1.5
+                    mt-3
+                    sm:mt-5
+                    min-w-0
+                  "
+                >
+                  {project.stack
+                    .slice(0, 8)
+                    .map((item) => (
+                      <span
+                        key={item}
+                        className="
+                          px-1.5
+                          sm:px-2.5
+                          py-0.5
+                          sm:py-1
+                          rounded-md
+                          sm:rounded-lg
+                          bg-[#f5f5f4]
+                          border
+                          border-[#1c1917]/30
+                          text-[6px]
+                          sm:text-[11px]
+                          font-mono
+                          font-bold
+                          text-[#292524]
+                          break-words
+                          max-w-full
+                        "
+                      >
+                        {item}
+                      </span>
+                    ))}
                 </div>
               )}
 
-              {/* actions */}
-              <div className="flex flex-wrap gap-2.5 mt-6 min-w-0">
+              {/* ======================================
+                  ACTIONS
+              ======================================= */}
+
+              <div
+                className="
+                  flex
+                  flex-wrap
+                  gap-1
+                  sm:gap-2.5
+                  mt-3
+                  sm:mt-6
+                  min-w-0
+                "
+              >
+
+                {/* Studi Kasus */}
+
                 <button
                   type="button"
-                  onClick={() => onSelectProject(project)}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1c1917] text-white border-2 border-[#1c1917] shadow-[3px_3px_0px_#15803d] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#15803d] transition-all duration-200 cursor-pointer"
+                  onClick={() =>
+                    onSelectProject(project)
+                  }
+                  className="
+                    inline-flex
+                    items-center
+                    gap-1
+                    sm:gap-2
+                    px-1.5
+                    sm:px-4
+                    py-1.5
+                    sm:py-2.5
+                    rounded-lg
+                    sm:rounded-xl
+                    bg-[#1c1917]
+                    text-white
+                    border-2
+                    border-[#1c1917]
+                    shadow-[2px_2px_0px_#15803d]
+                    sm:shadow-[3px_3px_0px_#15803d]
+                    hover:-translate-y-0.5
+                    hover:shadow-[4px_4px_0px_#15803d]
+                    transition-all
+                    duration-200
+                    cursor-pointer
+                    min-w-0
+                  "
                 >
-                  <span className="text-xs sm:text-sm font-black">
+                  <span
+                    className="
+                      text-[7px]
+                      sm:text-sm
+                      font-black
+                      whitespace-nowrap
+                    "
+                  >
                     Studi Kasus
                   </span>
 
-                  <ArrowUpRight className="w-4 h-4 shrink-0" />
+                  <ArrowUpRight
+                    className="
+                      w-3
+                      h-3
+                      sm:w-4
+                      sm:h-4
+                      shrink-0
+                    "
+                  />
                 </button>
 
-                {project.isMobileApp && (
-                  <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#e0f2fe] text-[#075985] border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917]">
-                    <Smartphone className="w-4 h-4 shrink-0" />
+                {/* Mobile Native */}
 
-                    <span className="text-xs sm:text-sm font-black">
+                {project.isMobileApp && (
+                  <span
+                    className="
+                      inline-flex
+                      items-center
+                      gap-1
+                      sm:gap-2
+                      px-1.5
+                      sm:px-4
+                      py-1.5
+                      sm:py-2.5
+                      rounded-lg
+                      sm:rounded-xl
+                      bg-[#e0f2fe]
+                      text-[#075985]
+                      border-2
+                      border-[#1c1917]
+                      shadow-[2px_2px_0px_#1c1917]
+                      sm:shadow-[3px_3px_0px_#1c1917]
+                      min-w-0
+                    "
+                  >
+                    <Smartphone
+                      className="
+                        w-3
+                        h-3
+                        sm:w-4
+                        sm:h-4
+                        shrink-0
+                      "
+                    />
+
+                    <span
+                      className="
+                        text-[7px]
+                        sm:text-sm
+                        font-black
+                        whitespace-nowrap
+                      "
+                    >
                       Mobile Native
                     </span>
                   </span>
                 )}
+
+                {/* Live Demo */}
 
                 {project.demoUrl && (
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#dcfce7] text-[#166534] border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917] hover:-translate-y-0.5 transition-all duration-200"
+                    className="
+                      inline-flex
+                      items-center
+                      gap-1
+                      sm:gap-2
+                      px-1.5
+                      sm:px-4
+                      py-1.5
+                      sm:py-2.5
+                      rounded-lg
+                      sm:rounded-xl
+                      bg-[#dcfce7]
+                      text-[#166534]
+                      border-2
+                      border-[#1c1917]
+                      shadow-[2px_2px_0px_#1c1917]
+                      sm:shadow-[3px_3px_0px_#1c1917]
+                      hover:-translate-y-0.5
+                      transition-all
+                      duration-200
+                      min-w-0
+                    "
                   >
-                    <ExternalLink className="w-4 h-4 shrink-0" />
+                    <ExternalLink
+                      className="
+                        w-3
+                        h-3
+                        sm:w-4
+                        sm:h-4
+                        shrink-0
+                      "
+                    />
 
-                    <span className="text-xs sm:text-sm font-black">
+                    <span
+                      className="
+                        text-[7px]
+                        sm:text-sm
+                        font-black
+                        whitespace-nowrap
+                      "
+                    >
                       Live Demo
                     </span>
                   </a>
                 )}
 
-                {project.isPrivateRepo ? (
-                  <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#f5f5f4] text-[#44403c] border-2 border-[#1c1917]/50">
-                    <Lock className="w-4 h-4 shrink-0" />
+                {/* Private Repository / GitHub */}
 
-                    <span className="text-xs sm:text-sm font-black">
+                {project.isPrivateRepo ? (
+                  <span
+                    className="
+                      inline-flex
+                      items-center
+                      gap-1
+                      sm:gap-2
+                      px-1.5
+                      sm:px-4
+                      py-1.5
+                      sm:py-2.5
+                      rounded-lg
+                      sm:rounded-xl
+                      bg-[#f5f5f4]
+                      text-[#44403c]
+                      border-2
+                      border-[#1c1917]/50
+                      min-w-0
+                    "
+                  >
+                    <Lock
+                      className="
+                        w-3
+                        h-3
+                        sm:w-4
+                        sm:h-4
+                        shrink-0
+                      "
+                    />
+
+                    <span
+                      className="
+                        text-[7px]
+                        sm:text-sm
+                        font-black
+                        whitespace-nowrap
+                      "
+                    >
                       Repo Private
                     </span>
                   </span>
@@ -285,11 +684,47 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fffdf5] text-[#1c1917] border-2 border-[#1c1917] shadow-[3px_3px_0px_#1c1917] hover:-translate-y-0.5 transition-all duration-200"
+                    className="
+                      inline-flex
+                      items-center
+                      gap-1
+                      sm:gap-2
+                      px-1.5
+                      sm:px-4
+                      py-1.5
+                      sm:py-2.5
+                      rounded-lg
+                      sm:rounded-xl
+                      bg-[#fffdf5]
+                      text-[#1c1917]
+                      border-2
+                      border-[#1c1917]
+                      shadow-[2px_2px_0px_#1c1917]
+                      sm:shadow-[3px_3px_0px_#1c1917]
+                      hover:-translate-y-0.5
+                      transition-all
+                      duration-200
+                      min-w-0
+                    "
                   >
-                    <ExternalLink className="w-4 h-4 shrink-0" />
+                    <ExternalLink
+                      className="
+                        w-3
+                        h-3
+                        sm:w-4
+                        sm:h-4
+                        shrink-0
+                      "
+                    />
 
-                    <span className="text-xs sm:text-sm font-black">
+                    <span
+                      className="
+                        text-[7px]
+                        sm:text-sm
+                        font-black
+                        whitespace-nowrap
+                      "
+                    >
                       GitHub
                     </span>
                   </a>
@@ -297,10 +732,21 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
               </div>
             </motion.div>
 
-            {/* project preview */}
+            {/* ========================================
+                PROJECT PREVIEW
+            ========================================= */}
+
             <motion.div
-              initial={{ opacity: 0, x: 24, scale: 0.98 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
+              initial={{
+                opacity: 0,
+                x: 24,
+                scale: 0.98
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1
+              }}
               transition={{
                 duration: 0.7,
                 delay: 0.18
@@ -309,56 +755,69 @@ export const FlagshipSlideCard: React.FC<FlagshipSlideCardProps> = ({
                 relative
                 min-w-0
                 w-full
-
-                min-h-[340px]
+                min-h-[180px]
                 sm:min-h-[340px]
                 lg:min-h-[430px]
-
                 flex
-                items-start
-                lg:items-center
-
-                overflow-visible
+                items-center
               "
             >
               <ProjectPreviewPlaceholder
                 project={project}
                 className="
-                  w-full
-                  h-[320px]
+                  h-[180px]
                   sm:h-[350px]
                   lg:h-[440px]
+                  min-w-0
+                  w-full
                 "
-                isMobileFrame={project.isMobileApp}
+                isMobileFrame={
+                  project.isMobileApp
+                }
               />
+
+              {/* Architecture button */}
 
               <button
                 type="button"
-                onClick={() => onSelectProject(project)}
+                onClick={() =>
+                  onSelectProject(project)
+                }
                 className="
                   absolute
-                  -bottom-3
-                  left-3
+                  -bottom-2
+                  left-1
+                  sm:-bottom-3
                   sm:left-8
-
-                  max-w-[calc(100%-24px)]
-
-                  px-3.5
-                  py-2
-                  rounded-xl
+                  px-1.5
+                  sm:px-3.5
+                  py-1.5
+                  sm:py-2
+                  rounded-lg
+                  sm:rounded-xl
                   bg-[#fde047]
                   text-[#1c1917]
                   border-2
                   border-[#1c1917]
-                  shadow-[3px_3px_0px_#1c1917]
-
+                  shadow-[2px_2px_0px_#1c1917]
+                  sm:shadow-[3px_3px_0px_#1c1917]
                   hover:-translate-y-0.5
                   transition-all
                   duration-200
                   cursor-pointer
+                  max-w-[95%]
+                  min-w-0
                 "
               >
-                <span className="text-[10px] sm:text-xs font-mono font-black whitespace-nowrap">
+                <span
+                  className="
+                    text-[6px]
+                    sm:text-xs
+                    font-mono
+                    font-black
+                    whitespace-nowrap
+                  "
+                >
                   Buka Arsitektur Sistem
                 </span>
               </button>
