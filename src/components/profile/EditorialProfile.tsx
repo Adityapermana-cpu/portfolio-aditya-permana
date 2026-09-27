@@ -167,7 +167,7 @@ export const EditorialProfile: React.FC = () => {
             />
 
             <p className="max-w-xs text-xs text-[#44403c] font-medium leading-relaxed">
-              Memiliki latar belakang Rekayasa Perangkat Lunak dengan pengalaman di bidang teknologi, administrasi, pengelolaan data, digitalisasi dokumen, pelayanan, dan pekerjaan operasional.
+              Lulusan Rekayasa Perangkat Lunak dengan nilai akhir 90, memiliki pengalaman di bidang administrasi, pengelolaan data, digitalisasi dokumen, pengembangan sistem digital sederhana, pelayanan pelanggan, serta pekerjaan operasional.
             </p>
           </div>
         </motion.div>
