@@ -8,27 +8,34 @@ import type {
 
 export const profileData: ProfileData = {
   name: 'Aditya Permana',
-  tagline: 'Web Developer • Software Developer • Digital System Developer',
+
+  tagline: 'Rekayasa Perangkat Lunak • Administrasi • Data Management • Web Development',
+
   education: 'Rekayasa Perangkat Lunak (RPL) • SMK Bina Cendekia Cirebon',
-  status: 'Terbuka untuk Peluang Kerja, Freelance, dan Pengembangan Sistem Digital',
-  bio: 'Siswa Rekayasa Perangkat Lunak dengan nilai akhir 93 yang memiliki pengalaman dalam pengembangan website dan sistem digital, pengelolaan data, digitalisasi arsip, administrasi, pelayanan pelanggan, serta pekerjaan operasional. Terbiasa bekerja secara teliti, mengikuti prosedur, bekerja dalam tim, beradaptasi dengan lingkungan baru, dan menyelesaikan pekerjaan sesuai kebutuhan.',
-  experienceStart: 'Web Developer',
+
+  status: 'Terbuka untuk Peluang Kerja dan Pengembangan Sistem Digital',
+
+  bio: 'Saya lulusan Rekayasa Perangkat Lunak dari SMK Bina Cendekia Cirebon dengan nilai akhir 90. Memiliki pengalaman di bidang administrasi, pengelolaan data, pengembangan sistem digital sederhana, serta F&B sebagai kasir dan kitchen. Terbiasa melakukan data entry, verifikasi data, pengelolaan dokumen, pembuatan laporan, serta menggunakan berbagai sistem kerja digital seperti Microsoft Office, Accurate, IDOS, dan sistem administrasi lainnya. Memiliki ketelitian, kemampuan komunikasi yang baik, mampu bekerja secara individu maupun dalam tim, terbiasa bekerja dengan target, menangani volume pekerjaan yang tinggi, serta mengikuti prosedur kerja (SOP). Memiliki kemampuan dasar pengembangan website, mampu beradaptasi dengan lingkungan kerja baru, disiplin, bertanggung jawab, proaktif, dan berorientasi pada penyelesaian pekerjaan.',
+
+  experienceStart: 'Web Development & Administration',
+
   avatarUrl: '/avatar.svg',
+
   interests: [
     'Web Development',
-    'Frontend Development',
-    'Backend Development',
-    'Digital System Development',
-    'Database & Data Management',
+    'Pengembangan Sistem Digital',
+    'Pengelolaan Data',
+    'Data Entry & Data Verification',
     'Digitalisasi Arsip & Dokumen',
-    'Administrasi & Data Entry',
-    'Customer Service & Operasional'
+    'Administrasi Dokumen',
+    'Administrasi Penjualan',
+    'Customer Service',
+    'F&B & Operasional'
   ],
+
   contact: {
     email: 'adityapermana2970@gmail.com',
-    github: 'GITHUB_KAMU',
-    linkedin: 'LINKEDIN_KAMU',
-    location: 'Cirebon, Indonesia'
+    location: 'Cirebon Jawa Barat, Indonesia'
   }
 };
 
