@@ -35,6 +35,7 @@ export const profileData: ProfileData = {
 
   contact: {
     email: 'adityapermana2970@gmail.com',
+    whatsapp: '089660542400',
     location: 'Cirebon Jawa Barat, Indonesia'
   }
 };
