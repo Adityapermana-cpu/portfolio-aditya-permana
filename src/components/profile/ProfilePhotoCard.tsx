@@ -79,7 +79,9 @@ export const ProfilePhotoCard: React.FC<ProfilePhotoCardProps> = ({ isFlooded })
           <MapPin className="w-4 h-4 text-[#dc2626]" />
           <span>Indonesia</span>
         </div>
-        <span className="text-[#15803d] font-black">Brevet A/B • PSAK &amp; DJP Compliance</span>
+        <span className="text-[#15803d] font-black">
+  RPL • Administrasi • Web Development
+</span>
       </motion.div>
     </motion.div>
   );
