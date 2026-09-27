@@ -35,7 +35,8 @@ export const profileData: ProfileData = {
 
   contact: {
     email: 'adityapermana2970@gmail.com',
-    whatsapp: '089660542400',
+    github: 'GITHUB_KAMU',
+    linkedin: 'LINKEDIN_KAMU',
     location: 'Cirebon Jawa Barat, Indonesia'
   }
 };
